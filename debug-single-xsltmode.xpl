@@ -49,7 +49,13 @@
     <p:with-option name="filename" 
       select="if($load eq '' and contains($mode, ':')) 
               then concat(substring-before($mode, ':'), '/', substring-before($mode, ':'), '.xsl') 
-              else $load"/>
+              else concat($load, '.xsl')">
+      <p:documentation xmlns="http://www.w3.org/1999/xhtml">
+        <p>There is a auto completion possible: If <code>p:option</code> load is empty, 
+          then the value of <code>p:option</code> mode will be separated by character '<kbd>:</kbd>' 
+          and the filename will be the result of &lt;string before '<kbd>:</kbd>'/&lt;string after '<kbd>:</kbd>.xsl.</p>
+      </p:documentation>
+    </p:with-option>
     <p:input port="paths">
       <p:pipe port="paths" step="debug-single-mode"/>
     </p:input>
