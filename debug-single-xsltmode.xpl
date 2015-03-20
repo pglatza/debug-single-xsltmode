@@ -3,7 +3,7 @@
   xmlns:p="http://www.w3.org/ns/xproc"
   xmlns:c="http://www.w3.org/ns/xproc-step"
   xmlns:letex="http://www.le-tex.de/namespace"
-  xmlns:bc="http://transpect.le-tex.de/book-conversion"
+  xmlns:transpect="http://www.le-tex.de/namespace/transpect" 
   name="debug-single-mode">
   
   <p:documentation xmlns="http://www.w3.org/1999/xhtml">
@@ -45,7 +45,7 @@
   <p:import href="http://transpect.le-tex.de/book-conversion/converter/xpl/load-cascaded.xpl"/>
   <p:import href="http://transpect.le-tex.de/xproc-util/xslt-mode/xslt-mode.xpl"/>
     
-  <bc:load-cascaded name="load-stylesheet">
+  <transpect:load-cascaded name="load-stylesheet">
     <p:with-option name="filename" 
       select="if($load eq '' and contains($mode, ':')) 
               then concat(substring-before($mode, ':'), '/', substring-before($mode, ':'), '.xsl') 
@@ -60,7 +60,7 @@
       <p:pipe port="paths" step="debug-single-mode"/>
     </p:input>
     <p:with-option name="debug" select="'no'"/>
-  </bc:load-cascaded>
+  </transpect:load-cascaded>
 
   <p:sink/>
 
