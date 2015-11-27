@@ -4,7 +4,8 @@
   xmlns:c="http://www.w3.org/ns/xproc-step"
   xmlns:letex="http://www.le-tex.de/namespace"
   xmlns:transpect="http://www.le-tex.de/namespace/transpect" 
-  name="debug-single-mode">
+  name="debug-single-mode"
+  type="transpect:debug-single-mode">
   
   <p:documentation xmlns="http://www.w3.org/1999/xhtml">
     <p>The purpose of this XProc pipeline ist to debug a single xslt mode in transpect projects. For faster debugging without the need to run the entire frontend pipeline (i.e. docx2ub -> evolve-hub -> xml2idml)</p>
